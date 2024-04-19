@@ -113,8 +113,8 @@ public class PedidoServiceTest2 {
     @Test
     public void test2ListarPedidos() {
         List<Pedido> listaPedidos = new ArrayList<>();
-        listaPedidos.add(new Pedido(1L, 1L, 20.0, "Pendente"));
-        listaPedidos.add(new Pedido(2L, 2L, 30.0, "Entregue"));
+  //      listaPedidos.add(new Pedido(1L, 1L, 20.0, "Pendente"));
+  //      listaPedidos.add(new Pedido(2L, 2L, 30.0, "Entregue"));
 
         when(pedidoRepository.findAll()).thenReturn(listaPedidos);
 

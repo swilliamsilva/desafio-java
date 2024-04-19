@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- Define o nível de log para o pacote org.hibernate como DEBUG -->
+    <logger name="org.hibernate" level="DEBUG" />
+
+    <!-- Define o layout do log -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>[%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!-- Configurações adicionais do Logback vão aqui -->
+    
+    <logger name="org.hibernate" level="DEBUG"/>
+
+    <!-- Define o logger raiz -->
+    <root level="INFO">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+</configuration>
+

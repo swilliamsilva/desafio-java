@@ -1,13 +1,14 @@
+
 spring:
   application:
-    name: ApprestauranteDJ
-  
+    name: AppRestauranteDJ
+
   datasource:
     url: jdbc:postgresql://localhost:5432/BDrestauranteDJ
-    username: seu_usuario_postgres
-    password: sua_senha_postgres
+    username: postgres
+    password: samuel
     driver-class-name: org.postgresql.Driver
-  
+
   jpa:
     properties:
       hibernate:
@@ -16,17 +17,24 @@ spring:
 
 # Configurações para o perfil de desenvolvimento utilizando H2
 ---
-spring:
-  profiles: dev
 
-  datasource:
+spring:
+   server.port=8085
+   profiles= dev
+   h2.console.enabled=true
+
+datasource:
     url: jdbc:h2:mem:BDrestauranteDJ
     username: sa
-    password: 
+    password: password
     driver-class-name: org.h2.Driver
 
-  jpa:
+jpa:
     properties:
       hibernate:
         ddl-auto: update
         dialect: org.hibernate.dialect.H2Dialect
+
+  
+
+

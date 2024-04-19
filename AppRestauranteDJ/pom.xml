@@ -31,11 +31,14 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
+		
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>runtime</scope>
-		</dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.1.214</version>
+            <scope>compile</scope>
+        </dependency>
+				
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -68,8 +71,39 @@
 			
 			<scope>test</scope>
 		</dependency>
-	</dependencies>
-
+		
+		
+        <!-- Dependências para o ambiente de teste -->
+     <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.6.4.Final</version> <!-- Versão atualizada do Hibernate -->
+        <scope>test</scope>
+     </dependency>
+     <dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-entitymanager</artifactId>
+        
+        <scope>test</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.h2database</groupId>
+        <artifactId>h2</artifactId>
+        
+        <scope>test</scope>
+    </dependency>
+    <!-- Outras dependências do projeto -->
+    
+     <!-- Dependência do Logback para logging -->
+    <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.6</version>
+    </dependency>
+    
+</dependencies>
+		
+	
 	<build>
 		<plugins>
 			<plugin>

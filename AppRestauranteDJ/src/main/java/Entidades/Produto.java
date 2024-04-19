@@ -5,49 +5,56 @@ import javax.persistence.*;
 @Entity
 @Table(name = "produtos")
 public class Produto {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    private String nome;
-    private double preco;
-    private String categoria;
 
-    // Construtores
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long id;
 
-    public Produto() {
-    }
+  private String nome;
+  private double preco;
+  private String categoria;
 
-    // Getters e Setters
+  // Construtor com argumentos para inicializar as propriedades
+  public Produto(String nome, double preco, String categoria) {
+    this.nome = nome;
+    this.preco = preco;
+    this.categoria = categoria;
+  }
 
-    public Long getId() {
-        return id;
-    }
+  // Construtor vazio (opcional)
+  public Produto() {
+  }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+  // Getters e Setters
+  public Long getId() {
+    return id;
+  }
 
-    public String getNome() {
-        return nome;
-    }
+  public void setId(Long id) {
+    this.id = id;
+  }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
+  public String getNome() {
+    return nome;
+  }
 
-    public double getPreco() {
-        return preco;
-    }
+  public void setNome(String nome) {
+    this.nome = nome;
+  }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
+  public double getPreco() {
+    return preco;
+  }
 
-    public String getCategoria() {
-        return categoria;
-    }
+  public void setPreco(double preco) {
+    this.preco = preco;
+  }
 
-    public void setCategoria(String categoria) {
-        this.categoria = categoria;
-    }
+  public String getCategoria() {
+    return categoria;
+  }
+
+  public void setCategoria(String categoria) {
+    this.categoria = categoria;
+  }
 }
