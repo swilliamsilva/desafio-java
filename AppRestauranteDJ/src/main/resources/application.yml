@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: ApprestauranteDJ
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/BDrestauranteDJ
+    username: seu_usuario_postgres
+    password: sua_senha_postgres
+    driver-class-name: org.postgresql.Driver
+  
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+# Configurações para o perfil de desenvolvimento utilizando H2
+---
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:h2:mem:BDrestauranteDJ
+    username: sa
+    password: 
+    driver-class-name: org.h2.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        dialect: org.hibernate.dialect.H2Dialect
