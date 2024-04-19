@@ -5,16 +5,16 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>3.2.4</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<version>2.2.4.RELEASE</version>
+		<relativePath/> <!-- This is not needed as it defaults to parent directory -->
 	</parent>
 	<groupId>com.kipho</groupId>
 	<artifactId>AppRestauranteDJ</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>AppRestauranteDJ</name> <!-- Changed name to match artifactId -->
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>17</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -25,7 +25,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -46,29 +45,29 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+			<exclusions>
+				<exclusion>
+					<groupId>org.junit.vintage</groupId>
+					<artifactId>junit-vintage-engine</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
-		
 		<dependency>
-             <groupId>javax.persistence</groupId>
-             <artifactId>javax.persistence-api</artifactId>
-             <version>2.2</version>
-        </dependency>
-		
+			<groupId>javax.persistence</groupId>
+			<artifactId>javax.persistence-api</artifactId>
+			</dependency>
 		<dependency>
-             <groupId>org.junit.jupiter</groupId>
-             <artifactId>junit-jupiter-api</artifactId>
-             <version>5.8.1</version>
-             <scope>test</scope>
-        </dependency>
-
-        <dependency>
-            <groupId>org.mockito</groupId>
-            <artifactId>mockito-core</artifactId>
-            <version>3.12.4</version>
-            <scope>test</scope>
-        </dependency>
-		
-		
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			
+			<scope>test</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
