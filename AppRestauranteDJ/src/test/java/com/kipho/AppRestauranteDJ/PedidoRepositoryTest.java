@@ -14,7 +14,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import Entidades.ItemPedido;
 import Entidades.Pedido;
-import Entidades.PedidoRepository;
+import Entidades.repository.PedidoRepository;
 
 @ExtendWith(SpringExtension.class)
 @DataJpaTest

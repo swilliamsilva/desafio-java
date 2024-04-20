@@ -16,8 +16,8 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
 import Entidades.Pedido;
-import Entidades.PedidoRepository;
-import Entidades.PedidoService;
+import Entidades.repository.PedidoRepository;
+import Entidades.services.PedidoService;
 
 public class PedidoServiceTest2 {
 

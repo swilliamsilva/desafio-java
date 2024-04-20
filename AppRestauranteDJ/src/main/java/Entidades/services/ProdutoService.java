@@ -1,7 +1,11 @@
-package Entidades;
+package Entidades.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import Entidades.Produto;
+import Entidades.repository.ProdutoRepository;
+
 import java.util.List;
 import java.util.Optional;
 

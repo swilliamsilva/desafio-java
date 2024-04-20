@@ -9,7 +9,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Entidades.Produto;
-import Entidades.ProdutoService;
+import Entidades.services.ProdutoService;
 
 import java.util.logging.Logger;
 

@@ -100,6 +100,12 @@
         <artifactId>logback-classic</artifactId>
         <version>1.2.6</version>
     </dependency>
+    <dependency>
+        <groupId>io.springfox</groupId>
+        <artifactId>springfox-boot-starter</artifactId>
+        <version>3.0.0</version> <!-- Certifique-se de verificar a versão mais recente -->
+</dependency>
+    
     
 </dependencies>
 		

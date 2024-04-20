@@ -1,8 +1,11 @@
-package Entidades;
+package Entidades.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import Entidades.Produto;
+import Entidades.services.ProdutoService;
 
 @RestController
 @RequestMapping("/api/produtos")
