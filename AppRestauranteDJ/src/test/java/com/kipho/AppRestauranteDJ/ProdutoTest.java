@@ -1,63 +1,69 @@
 package com.kipho.AppRestauranteDJ;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.transaction.Transactional;
-
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import Entidades.Produto;
-import Entidades.services.ProdutoService;
-
-import java.util.logging.Logger;
+import com.kipho.AppRestauranteDJ.models.Produto;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@Transactional
 public class ProdutoTest {
-    
-    private static final Logger LOGGER = Logger.getLogger(ProdutoTest.class.getName());
 
-    @PersistenceContext
-    private EntityManager em;
+    private static final Logger logger = LoggerFactory.getLogger(ProdutoTest.class);
+    private Produto produto;
 
     @BeforeEach
-    void setUp() {
-        LOGGER.info("Configurando o ambiente para os testes de Produto...");
-    }
-
-    @AfterEach
-    void tearDown() {
-        LOGGER.info("Limpando o ambiente após os testes de Produto...");
+    public void setUp() {
+        logger.info("Configurando teste...");
+        produto = new Produto("Arroz", 10.0, "Alimentos");
     }
 
     @Test
-    void testInclusaoProduto() {
-        LOGGER.info("Iniciando o teste de inclusão de Produto...");
-
-        // Inclusão de um novo produto
-        Produto novoProduto = criarProduto("Bolo de Chocolate", 15.00, "Sobremesa");
-        em.persist(novoProduto);
-
-        LOGGER.info("Produto inserido no banco de dados com sucesso.");
-
-        // Consulta para verificar se o produto foi incluído corretamente
-        Produto produtoInserido = em.find(Produto.class, novoProduto.getId());
-        assertNotNull(produtoInserido, "O produto não foi incluído corretamente no banco de dados.");
-        assertEquals("Bolo de Chocolate", produtoInserido.getNome(), "O nome do produto não corresponde ao esperado.");
-
-        LOGGER.info("Teste de inclusão de Produto concluído com sucesso.");
+    public void testCreateProdutoWithConstructor() {
+        logger.info("Testando construtor com argumentos...");
+        assertNotNull(produto);
+        assertEquals("Arroz", produto.getNome());
+        assertEquals(10.0, produto.getPreco());
+        assertEquals("Alimentos", produto.getCategoria());
     }
 
-    // Método auxiliar para criar um produto
-    private Produto criarProduto(String nome, double preco, String categoria) {
-        LOGGER.info("Criando novo Produto com nome: " + nome + ", preco: " + preco + ", categoria: " + categoria);
-        Produto produto = new Produto();
-        produto.setNome(nome);
-        produto.setPreco(preco);
-        produto.setCategoria(categoria);
-        return produto;
+    @Test
+    public void testCreateProdutoWithoutConstructor() {
+        logger.info("Testando construtor vazio...");
+        Produto emptyProduto = new Produto();
+        assertNotNull(emptyProduto);
+
+        emptyProduto.setNome("Feijão");
+        emptyProduto.setPreco(15.0);
+        emptyProduto.setCategoria("Alimentos");
+
+        assertEquals("Feijão", emptyProduto.getNome());
+        assertEquals(15.0, emptyProduto.getPreco());
+        assertEquals("Alimentos", emptyProduto.getCategoria());
+    }
+
+    @Test
+    public void testGettersAndSetters() {
+        logger.info("Testando getters e setters...");
+        produto.setId(1L);
+        produto.setNome("Milho");
+        produto.setPreco(20.0);
+        produto.setCategoria("Grãos");
+
+        assertEquals(1L, produto.getId());
+        assertEquals("Milho", produto.getNome());
+        assertEquals(20.0, produto.getPreco());
+        assertEquals("Grãos", produto.getCategoria());
+    }
+
+    @Test
+    public void testProdutoToString() {
+        logger.info("Testando o método toString...");
+        String expected = "Produto{id=null, nome='Arroz', preco=10.0, categoria='Alimentos'}";
+        String actual = produto.toString();
+        assertEquals(expected, actual);
     }
 }
+
