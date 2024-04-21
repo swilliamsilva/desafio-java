@@ -15,12 +15,9 @@
 
     <!-- Configurações adicionais do Logback vão aqui -->
     
-    <logger name="org.hibernate" level="DEBUG"/>
-
     <!-- Define o logger raiz -->
     <root level="INFO">
         <appender-ref ref="STDOUT" />
     </root>
-
+    
 </configuration>
-

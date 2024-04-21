@@ -15,7 +15,7 @@ public class Pedido {
     private Long id;
 
     @Column(name = "usuario_id", nullable = false)
-    private Long usuarioId; // Alterado de clienteId para usuarioId
+    private Long usuarioId;
 
     @Column(name = "valor_total", nullable = false)
     private Double valorTotal;
@@ -35,6 +35,14 @@ public class Pedido {
         this.valorTotal = valorTotal;
         this.status = status;
         LOGGER.info("Criando novo pedido com usuarioId: " + usuarioId + ", valorTotal: " + valorTotal + ", status: " + status);
+    }
+
+    public Pedido(Long id, Long usuarioId, Double valorTotal, String status) {
+        this.id = id;
+        this.usuarioId = usuarioId;
+        this.valorTotal = valorTotal;
+        this.status = status;
+        LOGGER.info("Criando novo pedido com id: " + id + ", usuarioId: " + usuarioId + ", valorTotal: " + valorTotal + ", status: " + status);
     }
 
     public Long getId() {
@@ -92,4 +100,3 @@ public class Pedido {
                 '}';
     }
 }
-

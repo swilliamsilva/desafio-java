@@ -29,7 +29,7 @@ public class PedidoRepositoryTest {
     public void testSalvarPedido() {
         LOGGER.info("Iniciando o teste de salvar pedido...");
 
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(null, null, null);
         pedido.setUsuarioId(1L);
         pedido.setValorTotal(50.0);
         pedido.setStatus("Em andamento");

@@ -38,7 +38,7 @@ public class PedidoServiceTest {
 
     @Test
     public void testCriarPedido() {
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(null, null, null);
         pedido.setUsuarioId(1L);
         pedido.setValorTotal(20.0);
         pedido.setStatus("Pendente");
@@ -60,7 +60,7 @@ public class PedidoServiceTest {
     @Test
     public void testObterPedidoPorId() {
         Long id = 1L;
-        Pedido pedido = new Pedido();
+        Pedido pedido = new Pedido(id, null, null);
         pedido.setId(id);
         pedido.setUsuarioId(1L);
         pedido.setValorTotal(20.0);
